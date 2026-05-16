@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Underdog&display=swap');
+
+:root {
+  --a: #5bdc95;
+  --u: #fff;
+  --l: #000;
+
+  --sidebar-width: 70em;
+
+  --button-color: color-mix(in srgb, var(--a), var(--u) 10%);
+
+}
+
+body {
+    margin: 0;
+    color: var(--l);
+    background-color: color-mix(in srgb, var(--u), var(--a) 20%);
+    font-family: "Underdog";
+  /* Здесь убрали отступы от края страницы */
+}
+
+.body {
+  display: flex;
+  margin: 0;
+  color: var(--l);
+  background-color: color-mix(in srgb, var(--u), var(--a) 20%);
+  font-family: "Underdog";
+}
+
+#page-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+nav#sidebar {
+  display: flex;
+  flex-direction: column;
+  width: var(--sidebar-width);
+  align-items: center;
+  justify-content: start;
+  padding: 1em .5em;
+  background-color: color-mix(in srgb, var(--a) 50%, var(--u) 50%);
+}
+
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+#sidebar li {
+  background-color: var(--button-color);
+  padding: .25em .5em;
+  border-radius: 999px;
+
+}
+
+#sidebar:has(#menu:checked) {
+  max-height: 1em;
+  overflow: clip;
+}
+
+#menu {
+  transform: translateX(-999px);
+}
+
+#menu::after {
+  transform: translateX(999px) translateY(-.75em);
+  height: 2em;
+  width: 2em;
+  background-color: var(--button-color);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: "x";
+
+}
+
+#menu:checked::after {
+  content: "=";
+}
+
+#content {
+    height: calc(100dvh - 1em);
+    width: calc(100dvw - 1em);
+    font-family: "Underdog";
+  /* 
+    Здесь мы задаём ширину и высоту области, в которой будут отрисовываться содержимое сайта.
+    dvh - Динамическая Виртуальная Высота = высота окна браузера
+    dvw - Динамическая Виртуальная Ширина = ширина окна браузера
+    1em = .5em + .5em = сумма внутренних отступов элемента #content
+  */
+    display: flex;
+    gap: 1em;
+  /* Расстояние между дочерними элементами (в нашем случае - постами) */
+    padding: .5em;
+}
+
+#content2 {
+    height: calc(100dvh - 1em);
+    width: calc(100dvw - 1em);
+    font-family: "Underdog";
+
+    display: flex;
+    gap: 1em;
+  /* Расстояние между дочерними элементами (в нашем случае - постами) */
+    padding: .5em;
+    flex-direction: column;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: fit-content;
+    background-color: color-mix(in srgb, var(--a) 50%, var(--u) 50%);
+  /* Смешиваем цвета */
+    padding: 1em;
+    border-radius: 1.5em;
+    gap: .5em;
+    font-family: "Underdog";
+}
+
+.card-header {
+    border-radius: .5em;
+    max-height: 100px;
+    object-fit: cover;
+    font-family: "Underdog";
+  /*
+    Настраиваем изображение так, чтобы оно не сплющивалось под установленную нами высоту и ширину, обрезалось по краям 
+  */
+}
+
+.img-desc {
+  background-color: color-mix(in srgb, var(--a), var(--l) 20%);
+  border-radius: .5em;
+  padding: 5px;
+}
+
+.card-title {
+    margin: 0;
+}
+
+.card-description {
+    margin: 0;
+    padding: .25em;
+    background-color: color-mix(in srgb, var(--a), var(--l) 20%);
+    border-radius: 0 .5em .5em 0;
+    border-left: 3px var(--l) solid;
+  /* 
+    Полоска слева - это border (окантовка)
+    В данном случае мы устанавливаем её только слева, но её можно установить с какой угодно стороны
+  */
+}
+
+.card-button {
+    background-color: color-mix(in srgb, var(--a), var(--u) 10%);
+    border: none;
+  /* Здесь мы убираем встроенную в HTML окантовку для кнопки */
+    height: 2em;
+    border-radius: .5em;
+    margin: 15px;
+    font-family: "Underdog";
+}
+
+a:has(.button) {
+  display: contents;
+}
+
+
+.card.open {
+  flex-direction: row;
+  width: 100%;
+}
+/* Задаём стилизацию для карточки поста во всю ширину */
+
+.card.open .card-description {
+  width: 100%;
+}
+
+.card.open .card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Стилизуем шапку сайта */
+header {
+  background-color: color-mix(in srgb, var(--a) 50%, var(--u) 50%);
+  padding: 0 1em;
+  height: 3em;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2em;
+  font-weight: 800;
+}
+
+.comment{
+  background-color: color-mix(in srgb, var(--a) 50%, var(--u) 50%);
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.comments {
+  background-color: color-mix(in srgb, var(--a), var(--l) 20%);
+  border-radius: 8px;
+  padding: 3px;
+  margin: 5px;
+  font-size: 12px;
+}
+
+.videos {
+    display: flex;
+    background-color: color-mix(in srgb, var(--a) 50%, var(--u) 50%);
+    padding: 1em;
+    border-radius: 1.5em;
+    gap: .5em;
+}
+
+.card-video {
+  border-radius: .5em;
+  width: 500px;
+  height: 250px;
+}
+
+.carousele{
+width: 100%;
+height: fit-content;
+}
+.carousele div img{
+width: 100%;
+}
+
+.carousele div:has(img) {
+  border-radius: .5em;
+}
+
+.carousele .slick-arrow.slick-next {
+  right: 10px;
+}
+
+
+.carousele .slick-arrow.slick-prev {
+  left: 10px;
+  z-index: 1;
+}

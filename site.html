@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<head>
+    <title>New site</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="..//slick/slick.min.js"></script>
+    <script type="text/javascript" src="..//js/script.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="..//slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="..//slick/slick-theme.css" />
+</head>
+
+<body>
+  <!-- Заголовок\шапка сайта -->
+    <div class="body">
+    <nav id="sidebar">
+        <input id="menu" type="checkbox" />
+        <ul>
+            <li>Menu</li>
+        </ul>
+    </nav>
+
+    <div id="page-wrapper">
+        <header>
+            <div class="logo">
+                MySite
+            </div>
+        </header>
+    <main>
+        <!-- div#content нам нужен для настройки отображения постов относительно друг друга -->
+        <div id="content">
+        
+            <!-- Здесь начинается пост --> 
+            <div class="card">
+                    <!-- Здесь - содержимое поста --> 
+
+                <div class="carousele">
+                    <div class="carousele-element">
+                        <img class="card-header image" id="img" 
+                        src="https://avatars.mds.yandex.net/i?id=732cafced6dabf0e2722bf7f51716ed8354f9cbe-5236761-images-thumbs&n=13" />
+                    </div>    
+                    <div class="carousele-element">    
+                        <img class="card-header image" id="img" 
+                        src="https://i.pinimg.com/originals/90/3a/ed/903aed151f2270388a26a88449336909.jpg?nii=t" />
+                    </div>    
+                </div>
+
+                        
+
+                <h2 class="card-title">
+                    Card title
+                </h2>
+
+                <p class="card-description">
+                    Card description
+                </p>
+
+                <a href="post1.html">
+                    <button class="card-button">
+                        Read
+                    </button>
+                </a>
+            </div>
+
+            <div class="card">
+                <div class="carousele">
+                    <div class="carousele-element">
+                        <img class="card-header" src="https://i.pinimg.com/736x/8f/6e/30/8f6e30ee8c9acc91fcd8ee34be6b9622.jpg" />
+                    </div>    
+                    <div class="carousele-element">    
+                        <img class="card-header" src="https://avatars.mds.yandex.net/i?id=0c260ba75a54c7f2b36f5455194fc1cddcec7d5f-5383000-images-thumbs&n=13" />
+                    </div>    
+                </div>
+
+                <h2 class="card-title">
+                    Властелин колец
+                </h2>
+
+                <p class="card-description">
+                    Подборка видео о данной вселенной
+                </p>
+
+                <a href="Подборка.html">
+                    <button class="card-button">
+                        Read
+                    </button>
+                </a>
+            </div>
+
+        </div>
+    </main>
+    </div>
+    </div>
+</body>
+
+</html>

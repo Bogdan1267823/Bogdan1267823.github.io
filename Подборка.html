@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<head>
+    <title>New site</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Заголовок\шапка сайта -->
+    <header>
+        <div class="logo">
+            MySite
+        </div>
+      
+      <!--  Кнопка "назад"т- ведёт на наш оригинальный site.html -->
+        <a href="site.html">
+            <button class="card-button">
+                Back
+            </button>
+        </a>
+
+    </header>
+
+    <main>
+        <!-- div#content нам нужен для настройки отображения постов относительно друг друга -->
+        <div id="content2">
+
+            <!-- Здесь начинается пост -->
+            <div class="card open">
+
+                <img class="card-header"
+                    src="https://i.pinimg.com/736x/8f/6e/30/8f6e30ee8c9acc91fcd8ee34be6b9622.jpg" />
+
+              <!-- Контейнер для сожержимого поста -->
+                <div class="card-content">
+                    <h2 class="card-title">
+                        Назгулы и гномы
+                    </h2>
+
+                    <p class="card-description">
+                        Видео о 2 расах Средиземья
+                    </p>
+                </div>
+            </div>
+
+            <div class="videos">         
+                <iframe class="card-video" src="https://vk.com/video_ext.php?oid=-125159885&id=456243360&hash=a19612eb9499d205"></iframe>
+                <iframe class="card-video" src="https://vk.com/video_ext.php?oid=-125159885&id=456243357&hash=6e6e0b7bfadd4cd2"></iframe>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>
